@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+var util = require('util');
+
+var optimist = require('optimist');
+var sprintf = require('sprintf').sprintf;
+
+var constants = require('../lib/constants');
+var run = require('../lib/run');
+
+var optimist = optimist.usage('Usage: $0 --config [config.json]');
+
+if (optimist.argv.version || optimist.argv.v) {
+  util.puts(sprintf('CsBot Github v%s', constants.VERSION));
+  process.exit(0)
+}
+
+if (optimist.argv.help || optimist.argv.h) {
+  util.puts('For help please refer to README.md');
+  process.exit(0)
+}
+
+var argv = optimist.demand(['config']).argv;
+
+try {
+  run.run(argv.config);
+}
+catch (err) {
+  util.print(err.message);
+
+  if (err.stack) {
+    util.print(err.stack);
+  }
+
+  process.exit(1);
+}
