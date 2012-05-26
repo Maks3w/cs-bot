@@ -15,7 +15,8 @@ class CurlyBracketsNewlineFixerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($simpleFixed, $fixer->fix($this->getFileMock(), $simpleFixed));
 
         $extended = <<<TEST
-class TestClass extends BaseTestClass implements TestInterface {
+class TestClass extends BaseTestClass implements TestInterface
+{
 TEST;
         $extendedFixed = <<<TEST
 class TestClass extends BaseTestClass implements TestInterface
@@ -28,7 +29,8 @@ TEST;
         $this->assertEquals($emptyClass, $fixer->fix($this->getFileMock(), $emptyClass));
 
         $extended = <<<TEST
-abstract class TestClass extends BaseTestClass implements TestInterface {
+abstract class TestClass extends BaseTestClass implements TestInterface
+{
 TEST;
         $extendedFixed = <<<TEST
 abstract class TestClass extends BaseTestClass implements TestInterface
@@ -53,7 +55,7 @@ TEST;
         $this->assertEquals($whileFixed, $fixer->fix($this->getFileMock(), $whileFixed));
 
         $switch = "switch(\$statement)   \n{";
-        $switchFixed = 'switch($statement) {';
+        $switchFixed = 'switch ($statement) {';
         $this->assertEquals($switchFixed, $fixer->fix($this->getFileMock(), $switch));
         $this->assertEquals($switchFixed, $fixer->fix($this->getFileMock(), $switchFixed));
 
@@ -105,11 +107,9 @@ EOF;
 
         $doWhile = <<<'EOF'
 
-    do
-    {
+    do {
         echo $test;
-    }
-    while ($test = $this->getTest());
+    } while ($test = $this->getTest());
 
 EOF;
         $fixedDoWhile = <<<'EOF'
