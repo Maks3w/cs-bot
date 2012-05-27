@@ -1,5 +1,7 @@
 A simple stub (not tested) for a hypothetical GitHub bot written in NodeJS.
 
+This bot is bassed in the original work of Kami (https://github.com/Kami/node-buildbot-github)
+
 This bot handle `pull_request` events (GiHub API v3) and do the following steps.
 
 -> Look for modified files in the pull request.
