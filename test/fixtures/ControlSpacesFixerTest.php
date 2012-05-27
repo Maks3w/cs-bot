@@ -19,7 +19,7 @@ class ControlSpacesFixerTest extends \PHPUnit_Framework_TestCase
     {
         $fixer = new Fixer();
 
-        $try = 'try{';
+        $try = 'try {';
         $tryFixed = 'try {';
         $this->assertEquals($tryFixed, $fixer->fix($this->getFileMock(), $try));
         $this->assertEquals($tryFixed, $fixer->fix($this->getFileMock(), $tryFixed));
@@ -29,7 +29,7 @@ class ControlSpacesFixerTest extends \PHPUnit_Framework_TestCase
     {
         $fixer = new Fixer();
 
-        $while = 'do { ... }while($test);';
+        $while = 'do { ... } while ($test);';
         $whileFixed = 'do { ... } while ($test);';
         $this->assertEquals($whileFixed, $fixer->fix($this->getFileMock(), $while));
         $this->assertEquals($whileFixed, $fixer->fix($this->getFileMock(), $whileFixed));
@@ -39,7 +39,7 @@ class ControlSpacesFixerTest extends \PHPUnit_Framework_TestCase
     {
         $fixer = new Fixer();
 
-        $if = 'if($test){';
+        $if = 'if ($test) {';
         $ifFixed = 'if ($test) {';
         $this->assertEquals($ifFixed, $fixer->fix($this->getFileMock(), $if));
         $this->assertEquals($ifFixed, $fixer->fix($this->getFileMock(), $ifFixed));
@@ -49,7 +49,7 @@ class ControlSpacesFixerTest extends \PHPUnit_Framework_TestCase
     {
         $fixer = new Fixer();
 
-        $else = '}else{';
+        $else = '} else {';
         $elseFixed = '} else {';
         $this->assertEquals($elseFixed, $fixer->fix($this->getFileMock(), $else));
         $this->assertEquals($elseFixed, $fixer->fix($this->getFileMock(), $elseFixed));
@@ -59,7 +59,7 @@ class ControlSpacesFixerTest extends \PHPUnit_Framework_TestCase
     {
         $fixer = new Fixer();
 
-        $elseif = '}elseif($test){';
+        $elseif = '} elseif ($test) {';
         $elseifFixed = '} elseif ($test) {';
         $this->assertEquals($elseifFixed, $fixer->fix($this->getFileMock(), $elseif));
         $this->assertEquals($elseifFixed, $fixer->fix($this->getFileMock(), $elseifFixed));

@@ -31,10 +31,10 @@ EOF;
 
         $input = <<<'EOF'
 
-     * @param  EngineInterface $templating
-     * @param string      $format
-     * @param  integer  $code       An HTTP response status code
-     * @param    Boolean      $debug
+     * @param EngineInterface $templating
+     * @param string          $format
+     * @param integer         $code       An HTTP response status code
+     * @param Boolean         $debug
 
 EOF;
 
@@ -56,9 +56,9 @@ EOF;
 
         $input = <<<'EOF'
 
-     * @param EngineInterface       $templating
-     * @throws   Bar description bar
-     * @return  Foo     description foo
+     * @param  EngineInterface $templating
+     * @throws Bar             description bar
+     * @return Foo             description foo
 
 EOF;
 
@@ -78,7 +78,7 @@ EOF;
 
         $input = <<<'EOF'
 
-     * @return   Foo             description foo
+     * @return Foo description foo
 
 EOF;
 

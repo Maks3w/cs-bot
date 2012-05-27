@@ -40,13 +40,13 @@ EOF;
     public $var;
     protected $var_foo;
     private $FooBar;
-    static public $var;
-    static protected $var_foo;
-    static private $FooBar;
     public static $var;
     protected static $var_foo;
     private static $FooBar;
-    var $old = 'foo';
+    public static $var;
+    protected static $var_foo;
+    private static $FooBar;
+    public $old = 'foo';
 
 EOF;
 
@@ -79,16 +79,16 @@ EOF;
         $input = <<<'EOF'
 
     public function foo() {}
-    function foo() {}
+    public function foo() {}
     protected function foo() {}
     private function foo() {}
     final public function foo() {}
     abstract public function foo() {}
-    public final function foo() {}
-    public abstract function foo() {}
+    final public function foo() {}
+    abstract public function foo() {}
     public static function foo() {}
-    final static function foo() {}
-    static abstract function foo() {}
+    final public static function foo() {}
+    abstract public static function foo() {}
     function ($foo) {}
     function() {}
 
