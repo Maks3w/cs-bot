@@ -3,14 +3,13 @@
 var util = require('util');
 
 var optimist = require('optimist');
-var sprintf = require('sprintf').sprintf;
 
 var run = require('../lib/run');
 
 var optimist = optimist.usage('Usage: $0 --config [config.json]');
 
 if (optimist.argv.version || optimist.argv.v) {
-  util.puts(sprintf('CsBot GitHub'));
+  util.puts('CsBot GitHub');
   process.exit(0)
 }
 

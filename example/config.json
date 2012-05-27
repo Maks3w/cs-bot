@@ -1,6 +1,6 @@
 {
     "general": {
-        "checkout_dir": "<path to the directory where checkout the repositories>"
+        "work_dir": "<path to the directory where checkout the repositories>"
     },
     "templates": {
         "comment_success": "Branch `${branch}` has been successfully built. Details can be viewed at ${build_url}.",
